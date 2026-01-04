@@ -4,39 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>INDEFERITOR RECURSAL</title>
+  <title>INDEFERITOR RECURSAL & Fluxo de Análise</title>
   <style>
+    /* --- ESTILOS GERAIS --- */
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f9ff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f9ff; /* Azul bem suave */
       color: #003366;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
+    /* --- CABEÇALHO --- */
     header {
       background-color: #003366;
       color: white;
       padding: 20px;
       text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
     .logo {
       max-width: 400px;
       margin-bottom: 10px;
+      height: auto;
     }
 
+    /* --- ÁREA PRINCIPAL --- */
     main {
-      padding: 30px;
-      max-width: 800px;
+      padding: 30px 20px;
+      width: 100%;
+      max-width: 1400px; /* Aumentado para caber o fluxograma */
       margin: 0 auto;
+      flex: 1; /* Empurra o rodapé para baixo */
+    }
+
+    /* Container para limitar a largura do texto (leitura confortável) */
+    .content-container {
+      max-width: 800px;
+      margin: 0 auto 50px auto; /* Margem embaixo para separar do fluxo */
     }
 
     h1 {
       text-align: center;
       color: #003366;
+      margin-bottom: 15px;
     }
 
+    .subtitle {
+        text-align: center;
+        color: #555;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+
+    /* --- BOTÕES E LINKS --- */
     .download-links {
       text-align: center;
       margin: 40px 0;
@@ -45,81 +70,154 @@
     .btn {
       background-color: #003366;
       color: white;
-      padding: 12px 24px;
+      padding: 15px 30px;
       margin: 10px;
       text-decoration: none;
       border-radius: 8px;
       display: inline-block;
-      transition: background-color 0.3s;
+      transition: all 0.3s;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
     }
 
     .btn:hover {
       background-color: #00509e;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0,0,0,0.2);
     }
 
+    /* --- CAIXA DE INSTRUÇÕES --- */
     .instructions {
       background-color: #e6f0ff;
       border-left: 6px solid #003366;
-      padding: 20px;
+      padding: 25px;
       border-radius: 10px;
+      margin-top: 30px;
     }
 
-    footer {
-    text-align: justify;
-    font-size: 0.9rem;
-    margin: 40px auto 0; /* Centraliza horizontalmente */
-    max-width: 800px;
-    padding: 20px;
-    color: #888;
+    .instructions h3 { margin-top: 0; }
+    .instructions li { margin-bottom: 8px; }
+
+    /* --- CARTÃO DO FLUXOGRAMA (NOVO) --- */
+    .flowchart-card {
+        background-color: #ffffff;
+        width: 100%;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave */
+        text-align: center;
+        border: 1px solid #e1e4e8;
+        margin-top: 20px;
+    }
+
+    .flowchart-title {
+        color: #1e3a8a;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        border-bottom: 2px solid #e5e7eb;
+        padding-bottom: 15px;
+        letter-spacing: 0.5px;
+    }
+
+    .svg-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        overflow-x: auto; /* Permite rolagem lateral no celular */
+        padding-bottom: 10px;
+    }
+
+    svg {
+        max-width: 100%;
+        height: auto !important;
+    }
+
+    /* --- RODAPÉ PERSONALIZADO --- */
+    .footer-dwso {
+      background-color: #002244; /* Azul um pouco mais escuro que o header */
+      color: #b0c4de;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 12px;
+      margin-top: auto;
+      border-top: 4px solid #004080;
+    }
+
+    .footer-dwso p {
+        margin: 5px 0;
+        line-height: 1.6;
+    }
+
+    .footer-dwso a {
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 1px dotted #777;
+        transition: color 0.3s;
+    }
+
+    .footer-dwso a:hover {
+        color: #4da6ff;
+        border-bottom: 1px solid #4da6ff;
+    }
+
+    .heart {
+        color: #e25555;
+        font-size: 14px;
+        padding: 0 2px;
+    }
+    
+    .license-text {
+        opacity: 0.8;
+        margin-bottom: 15px !important;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+        .flowchart-card { padding: 1rem; }
+        h1 { font-size: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <!-- Substitua com o caminho correto da logo -->
-    <img src="iconhd.png" alt="Logo da extensão" class="logo" />
+    <h2 style="margin:0;">INDEFERITOR RECURSAL</h2>
   </header>
 
   <main>
-    <h1>Instale agora a extensão e aumente a sua produtividade</h1>
-    <p>Ferramenta para Otimização de Indeferimentos no Âmbito da Força-Tarefa para Análise Recursal (Via SEI)</p>
+    <div class="content-container">
+        <h1>Instale agora a extensão e aumente a sua produtividade</h1>
+        <p class="subtitle">Ferramenta para Otimização de Indeferimentos no Âmbito da Força-Tarefa para Análise Recursal (Via SEI)</p>
 
-    <div class="download-links">
-      <a href="aguardarchrome" class="btn" target="_blank">Instalação via Chrome Web Store (Google Chrome e MS Edge)</a><br>
+        <div class="download-links">
+          <a href="aguardarchrome" class="btn" target="_blank">Instalação via Chrome Web Store (Chrome e Edge)</a>
+        </div>
+
+        <div class="instructions">
+          <h3>📌 Instruções para instalação no Google Chrome:</h3>
+          <ol>
+            <li>Acesse a Chrome Store pelo link acima.</li>
+            <li>Siga as instruções de instalação do site.</li>
+            <li>Pronto! A extensão estará ativa. Só ativar e indeferir!</li>
+            <li>Fixe a ferramenta após instalação em sua barra de ferramentas para maior agilidade.</li>
+          </ol>
+          <hr style="border: 0; border-top: 1px solid #bcdbf7; margin: 20px 0;">
+          <h3>📌 Instruções para instalação no Microsoft Edge:</h3>
+          <ol>
+            <li>Acesse a Chrome Store pelo link acima.</li>
+            <li>Negue pedidos de ir para o Google Chrome.</li>
+            <li>Use a barra cinza superior com simbolo do MS Edge e clique em "Obter extensão".</li>
+            <li>No pop-up aberto clique em "Instalar extensão".</li>
+            <li>Pronto! Fixe a ferramenta na barra para uso diário.</li>
+          </ol>
+        </div>
     </div>
 
-    <div class="instructions">
-      <h3>📌 Instruções para instalação no Google Chrome:</h3>
-      <ol>
-        <li>Acesse a Chrome Store pelo link acima.</li>
-        <li>Siga as instruções de intalação do site.</li>
-        <li>Pronto! A extensão estará ativa. Só ativar e indeferir!</li>
-     	<li>Fixe a ferramenta após instalação em sua barra de ferramentas para maior agilidade no uso diário.</li>
-
-      </ol>
-	  
-	  
-	  <h3>📌 Instruções para instalação no Microsoft Edge:</h3>
-      <ol>
-        <li>Acesse a Chrome Store pelo link acima.</li>
-        <li>Negue pedidos de ir para o Google Chrome ou o baixar.</li>
-        <li>Use a barra cinza superior com simbolo do MS Edge e clique em "Obter extensão"</li>
-	<li>No pop-up aberto clique em "Instalar extensão"</li>
-        <li>Pronto! A extensão estará ativa. Só ativar e indeferir!</li>
-	<li>Fixe a ferramenta após instalação em sua barra de ferramentas para maior agilidade no uso diário.</li>
-      </ol>
-    </div>
-	  <br>
-
-  </main>
-
- 
-
-
-  <footer>
-    &copy; 2026 -  Esta extensão é licenciada sob a <a href="https://creativecommons.org/licenses/by/4.0/deed.pt-br" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Licença Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)</a>. Você pode usar, modificar e redistribuir livremente este código para qualquer propósito, inclusive comercial, desde que seja atribuída a devida autoria a <a href="https://drdwso.github.io" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><strong>drdwso</strong></a>.
-  </footer>
-
-</body>
-</html>
+    <div class="flowchart-card">
+        <h2 class="flowchart-title">Fluxograma de Decisão</h2>
+        <div class="svg-container">
+            <svg xmlns="http://www.w3.org/2000/svg" style="background: transparent; background-color: transparent; color-scheme: light dark;" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1635" height="998" viewBox="-0.5 -0.5 1635 998"><defs><linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="drawio-svg-wk_Hkwl6fXYNZfdlaEF7-gradient-_ffcd28-1-_ffa500-1-s-0"><stop offset="0%" stop-color="#ffcd28" stop-opacity="1" style="stop-color: rgb(255, 205, 40); stop-opacity: 1;"/><stop offset="100%" stop-color="#ffa500" stop-opacity="1" style="stop-color: rgb(255, 165, 0); stop-opacity: 1;"/></linearGradient><filter id="drawio-drop-shadow"><feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="blur"/><feOffset in="blur" dx="3" dy="3" result="offsetBlur"/><feFlood flood-color="#3D4574" flood-opacity="0.4" result="offsetColor"/><feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"/><feBlend in="SourceGraphic" in2="offsetBlur"/></filter></defs><g filter="url(#drawio-drop-shadow)"><g data-cell-id="0"><g data-cell-id="1"><g data-cell-id="_ume-1s0VZ12_V9LW-jT-1"><g><rect x="10" y="0" width="120" height="60" rx="9" ry="9" fill="#0050ef" stroke="#001dbc" pointer-events="all" style="fill: rgb(0, 80, 239); stroke: rgb(0, 29, 188);"/></g><g><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 30px; margin-left: 11px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; color: #ffffff; "><div style="display: inline-block; font-size: 14px; font-family: &quot;Helvetica&quot;; color: #ffffff; line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; word-wrap: normal; ">Início do Processo de Análise</div></div></div></foreignObject><image x="11" y="5.5" width="118" height="53.5" xlink:href="data:image/png;base64,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
