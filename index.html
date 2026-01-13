@@ -62,22 +62,36 @@
       border-left: 6px solid #003366;
       padding: 20px;
       border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* Estilo para a seção manual diferenciada */
+    .manual-install {
+      background-color: #eef4fa;
+      border-left: 6px solid #5a7b9c;
     }
 
     footer {
-    text-align: justify;
-    font-size: 0.9rem;
-    margin: 40px auto 0; /* Centraliza horizontalmente */
-    max-width: 800px;
-    padding: 20px;
-    color: #888;
+      text-align: justify;
+      font-size: 0.9rem;
+      margin: 40px auto 0;
+      max-width: 800px;
+      padding: 20px;
+      color: #888;
+    }
+    
+    code {
+      background-color: #dae8fc;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <!-- Substitua com o caminho correto da logo -->
     <img src="iconhd.png" alt="Logo da extensão" class="logo" />
   </header>
 
@@ -91,46 +105,68 @@
     </div>
 
     <div class="instructions">
-      <h3>📌 Instruções para instalação no Google Chrome:</h3>
+      <h3>📌 Instruções para instalação via Loja (Recomendado):</h3>
+      
+      <h4>Google Chrome:</h4>
       <ol>
         <li>Acesse a Chrome Store pelo link acima.</li>
-        <li>Siga as instruções de intalação do site.</li>
+        <li>Siga as instruções de instalação do site (botão "Usar no Chrome").</li>
         <li>Pronto! A extensão estará ativa. Só ativar e indeferir!</li>
-     	<li>Fixe a ferramenta após instalação em sua barra de ferramentas para maior agilidade no uso diário.</li>
-
+        <li>Fixe a ferramenta após instalação em sua barra de ferramentas para maior agilidade.</li>
       </ol>
-	  
-	  
-	  <h3>📌 Instruções para instalação no Microsoft Edge:</h3>
+      
+      <h4>Microsoft Edge:</h4>
       <ol>
         <li>Acesse a Chrome Store pelo link acima.</li>
-        <li>Negue pedidos de ir para o Google Chrome ou o baixar.</li>
-        <li>Use a barra cinza superior com simbolo do MS Edge e clique em "Obter extensão"</li>
-	<li>No pop-up aberto clique em "Instalar extensão"</li>
-        <li>Pronto! A extensão estará ativa. Só ativar e indeferir!</li>
-	<li>Fixe a ferramenta após instalação em sua barra de ferramentas para maior agilidade no uso diário.</li>
+        <li>Permita extensões de outras lojas clicando na barra superior, se solicitado.</li>
+        <li>Clique em "Obter extensão" e depois em "Adicionar extensão".</li>
+        <li>Pronto! Fixe a ferramenta na barra superior para facilitar o uso.</li>
       </ol>
     </div>
-	  <br>
-<div class="instructions" style="margin-top: 40px; background-color: #fff3cd; border-left: 6px solid #ffcc00; color: #856404;">
-  <h3>🛠 Anotação Técnica – Problema com Copiar & Colar</h3>
-  <p>
-    Em alguns casos, ao usar a <strong>Ferramenta de Captura</strong> (Snipping Tool) do Windows 10 ou 11, a função de <strong>copiar e colar</strong> pode falhar — isso afeta o funcionamento da extensão ao tentar colar os textos gerados.
-  </p>
-  <p><strong>Como resolver:</strong></p>
-  <ol>
-    <li>Abra a Ferramenta de Captura.</li>
-    <li>Clique no menu de três linhas ou pontinhos (☰) no canto superior direito.</li>
-    <li>Acesse <strong>Configurações</strong>.</li>
-    <li>Desative a opção <strong>“Copiar automaticamente alterações”</strong>.</li>
-    <li>Feche e abra novamente a ferramenta ou o navegador, se necessário.</li>
-  </ol>
-  <p>Após esse ajuste, o problema deve desaparecer.</p>
-</div>
+
+    <div class="instructions manual-install">
+      <h3>📂 Instalação Manual (Arquivo .ZIP ou .CRX)</h3>
+      <p>Utilize este método caso tenha baixado os arquivos fonte ou um pacote externo fora da loja oficial.</p>
+
+      <h4>Passo 1: Ativar o Modo Desenvolvedor</h4>
+      <ul>
+        <li>
+          <strong>No Chrome:</strong> Digite <code>chrome://extensions</code> na barra de endereço e dê Enter. No canto superior direito, ative a chave <strong>"Modo do desenvolvedor"</strong>.
+        </li>
+        <li>
+          <strong>No Edge:</strong> Digite <code>edge://extensions</code> na barra de endereço e dê Enter. No menu lateral esquerdo (ou topo), ative a chave <strong>"Modo do desenvolvedor"</strong>.
+        </li>
+      </ul>
+
+      <h4>Passo 2: Arrastar e Soltar</h4>
+      <p>Com o arquivo baixado em seu computador (seja ele <strong>.zip</strong> ou <strong>.crx</strong>):</p>
+      
+      <ol>
+        <li>Mantenha a página de extensões do navegador aberta (aquela do Passo 1).</li>
+        <li>Abra a pasta onde o arquivo da extensão está salvo no seu computador.</li>
+        <li>Clique e <strong>arraste o arquivo</strong> (.zip ou .crx) para dentro da página de extensões do navegador.</li>
+        <li>O navegador perguntará se deseja instalar a extensão. Confirme a instalação.</li>
+        <li>Pronto! A extensão foi instalada manualmente.</li>
+      </ol>
+    </div>
+
+    <div class="instructions" style="margin-top: 40px; background-color: #fff3cd; border-left: 6px solid #ffcc00; color: #856404;">
+      <h3>🛠 Anotação Técnica – Problema com Copiar & Colar</h3>
+      <p>
+        Em alguns casos, ao usar a <strong>Ferramenta de Captura</strong> (Snipping Tool) do Windows 10 ou 11, a função de <strong>copiar e colar</strong> pode falhar — isso afeta o funcionamento da extensão ao tentar colar os textos gerados.
+      </p>
+      <p><strong>Como resolver:</strong></p>
+      <ol>
+        <li>Abra a Ferramenta de Captura.</li>
+        <li>Clique no menu de três linhas ou pontinhos (☰) no canto superior direito.</li>
+        <li>Acesse <strong>Configurações</strong>.</li>
+        <li>Desative a opção <strong>“Copiar automaticamente alterações”</strong>.</li>
+        <li>Feche e abra novamente a ferramenta ou o navegador, se necessário.</li>
+      </ol>
+      <p>Após esse ajuste, o problema deve desaparecer.</p>
+    </div>
+
   </main>
-
- 
-
 
   <footer>
     &copy; 2025 -  Esta extensão é licenciada sob a <a href="https://creativecommons.org/licenses/by/4.0/deed.pt-br" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Licença Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)</a>. Você pode usar, modificar e redistribuir livremente este código para qualquer propósito, inclusive comercial, desde que seja atribuída a devida autoria a <a href="https://drdwso.github.io" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;"><strong>drdwso</strong></a>.
